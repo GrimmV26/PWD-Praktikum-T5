@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrimmV26 VN Store - Toko Visual Novel Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="brand-title">VN Store</h1>
+        <div class="header-actions">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Cari judul visual novel...">
+            </div>
+            <button id="btnCartToggle" class="btn-cart-toggle" title="Buka/Tutup Keranjang">
+                Keranjang <span id="cartBadge" class="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="store-notice">Digital Key Only</div>
+    </nav>
+
+    <main class="container">
+        <section class="catalog-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Katalog Produk</h2>
+            </div>
+            <div id="productGrid" class="product-grid"></div>
+        </section>
+
+        <aside id="cartSidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Keranjang Belanja</h3>
+                <span id="cartCountPill" class="cart-count-pill">0 Item</span>
+            </div>
+
+            <ul id="cartItemList" class="cart-item-list">
+                <li id="cartEmptyMessage" class="cart-empty-message">Keranjang belanja Anda masih kosong.</li>
+            </ul>
+
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Total Kuantitas:</span>
+                    <strong id="totalQtyText">0 Item</strong>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Pembayaran:</span>
+                    <strong id="totalPriceText">Rp 0</strong>
+                </div>
+                <div class="cart-actions">
+                    <button id="btnEmptyCart" class="btn-empty-cart">Kosongkan</button>
+                    <button id="btnCheckout" class="btn-checkout">Checkout</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div id="receiptModal" class="receipt-modal-backdrop">
+        <div class="receipt-card">
+            <h3 class="receipt-title">Ringkasan Pesanan Berhasil</h3>
+            <div class="receipt-info">
+                <div>Nama Pembeli: <strong id="receiptBuyerName">-</strong></div>
+                <div>Tanggal Transaksi: <strong id="receiptDate">-</strong></div>
+            </div>
+
+            <table class="receipt-items-table">
+                <thead>
+                    <tr>
+                        <th>Judul Produk</th>
+                        <th style="text-align: center;">Jumlah</th>
+                        <th style="text-align: right;">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="receiptTableBody"></tbody>
+                <tfoot>
+                    <tr class="receipt-total-row">
+                        <td colspan="2">Total (<span id="receiptTotalItems">0</span> item)</td>
+                        <td id="receiptTotalPrice" style="text-align: right;">Rp 0</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <button id="btnCloseReceipt" class="btn-close-receipt">Tutup</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Tugas ajasi | Background: <a href="https://vndb.org/v25366">Koikari</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
